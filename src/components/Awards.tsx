@@ -1,119 +1,113 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import minimalBestFilm from '../assets/minimal-best-film.png'
-import minimalAudienceChoice from '../assets/minimal-audience-choice.png'
-import minimalInnovation from '../assets/minimal-innovation.png'
-import minimalDirectorsChoice from '../assets/minimal-directors-choice.png'
-import minimalExcellence from '../assets/minimal-excellence.png'
-import minimalRisingTalent from '../assets/minimal-rising-talent.png'
+import { motion } from 'framer-motion'
+import { Star, Quote } from 'lucide-react'
+
+const testimonials = [
+  {
+    quote: "Webistry rebuilt our entire eshop in six weeks. Conversion jumped 38% in the first month and the team finally enjoys using the admin.",
+    author: 'Elena Marinos',
+    role: 'CEO, Nordic Bloom',
+    accent: 'blue',
+  },
+  {
+    quote: "The custom CRM they delivered replaced four SaaS tools and saved us nearly €40k a year. Best agency decision we've made.",
+    author: 'Dimitris Papadakis',
+    role: 'COO, Helix Agency',
+    accent: 'purple',
+  },
+  {
+    quote: "They don't just design pretty pages — they think about funnel, copy, and analytics from day one. Real partners.",
+    author: 'Sarah Chen',
+    role: 'Founder, Orbit',
+    accent: 'emerald',
+  },
+  {
+    quote: "Our new booking platform handles 4× the traffic with zero issues. The UX is genuinely a competitive advantage now.",
+    author: 'Marco Bianchi',
+    role: 'Director, Lumen Wellness',
+    accent: 'blue',
+  },
+  {
+    quote: "Beautiful design, clean code, on-time delivery. They communicated better than any internal team I've worked with.",
+    author: 'Jana Kowalska',
+    role: 'Head of Product, Aether',
+    accent: 'purple',
+  },
+  {
+    quote: "From discovery to launch in 9 weeks. The Lighthouse scores alone made our marketing team cry happy tears.",
+    author: 'Tom Reilly',
+    role: 'CMO, Pulse Analytics',
+    accent: 'emerald',
+  },
+]
+
+const accentMap: Record<string, string> = {
+  blue: 'hsl(var(--accent-blue))',
+  purple: 'hsl(var(--accent-purple))',
+  emerald: 'hsl(var(--accent-emerald))',
+}
 
 export function Awards() {
-  const awards = [
-    {
-      image: minimalBestFilm,
-      delay: "0s"
-    },
-    {
-      image: minimalAudienceChoice,
-      delay: "0.5s"
-    },
-    {
-      image: minimalInnovation,
-      delay: "1s"
-    },
-    {
-      image: minimalDirectorsChoice,
-      delay: "1.5s"
-    },
-    {
-      image: minimalExcellence,
-      delay: "2s"
-    },
-    {
-      image: minimalRisingTalent,
-      delay: "2.5s"
-    }
-  ]
-
   return (
-    <section id="awards" className="relative py-20 bg-background overflow-hidden">
-      
-      {/* Elegant Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
-      
-
-
-      <div className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
-        
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <div className="w-3 h-3 bg-accent-purple rounded-full animate-pulse" />
-            <span className="text-sm font-semibold text-muted-foreground">
-              Recognition & Achievement
-            </span>
-            <div className="w-3 h-3 bg-accent-blue rounded-full animate-pulse" />
+    <section className="relative py-32 bg-background overflow-hidden">
+      <div className="absolute inset-0 grid-bg opacity-20" />
+      <div className="container mx-auto px-6 lg:px-12 relative">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="max-w-3xl mb-20"
+        >
+          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-accent-blue mb-4">
+            <span className="w-8 h-px bg-accent-blue" /> Testimonials
           </div>
-          
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6 text-foreground">
-            Awards & Recognition
+          <h2 className="font-display text-4xl lg:text-6xl font-bold leading-tight mb-6">
+            Trusted by teams who <span className="gradient-text">ship</span>.
           </h2>
-          
-          <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            Celebrated excellence in AI-powered film production
+          <p className="text-lg text-muted-foreground leading-relaxed">
+            Founders, marketers and product leaders on what it's like to work with us.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Awards Display */}
-        <div className="relative max-w-7xl mx-auto">
-          
-          {/* Awards Grid */}
-          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
-            {awards.map((award, index) => (
-              <div
-                key={index}
-                className="group relative flex flex-col items-center text-center"
-                style={{ animationDelay: award.delay }}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.map((t, i) => {
+            const color = accentMap[t.accent]
+            return (
+              <motion.figure
+                key={t.author}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.6, delay: i * 0.08 }}
+                whileHover={{ y: -6 }}
+                className="relative p-8 rounded-2xl bg-card border border-border overflow-hidden gentle-animation hover:border-accent-blue/40"
               >
-                
-                {/* Award Pedestal */}
-                <div className="relative mb-6">
-                  
-                  {/* Floating Award Display */}
-                  <div className={`relative p-6 rounded-2xl border shadow-md transition-all duration-500 hover:scale-105 ${
-                    index === 2 || index === 3 ? 'bg-gray-800 border-gray-700' : 'bg-background border-border'
-                  }`}
-                       style={{ 
-                         boxShadow: '0 8px 24px rgba(0,0,0,0.08)'
-                       }}>
-                    
-                    {/* Award Image */}
-                    <img 
-                      src={award.image}
-                      alt="Film Festival Award Laurel"
-                      className="w-full h-auto max-w-48 mx-auto"
-                      style={{
-                        filter: 'contrast(1.02) saturate(1.1)',
-                      }}
-                    />
-                    
-
-                  </div>
-                  
-                  {/* Floating Animation */}
-                  <div className="float-gentle absolute inset-0 pointer-events-none" />
+                <Quote className="absolute top-6 right-6 w-10 h-10 opacity-10" style={{ color }} />
+                <div className="flex gap-1 mb-4">
+                  {[...Array(5)].map((_, k) => (
+                    <Star key={k} className="w-4 h-4 fill-current" style={{ color }} />
+                  ))}
                 </div>
-
-              </div>
-            ))}
-          </div>
-
+                <blockquote className="text-foreground/90 leading-relaxed mb-6 relative z-10">
+                  "{t.quote}"
+                </blockquote>
+                <figcaption className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-white"
+                       style={{ background: color }}>
+                    {t.author.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-sm">{t.author}</div>
+                    <div className="text-xs text-muted-foreground">{t.role}</div>
+                  </div>
+                </figcaption>
+              </motion.figure>
+            )
+          })}
         </div>
-
-
       </div>
-      
     </section>
   )
 }
