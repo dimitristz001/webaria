@@ -178,24 +178,65 @@ export function Portfolio() {
               exit={{ scale: 0.92, y: 30 }}
               transition={{ type: 'spring', damping: 25, stiffness: 220 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-card border border-border rounded-3xl max-w-2xl w-full overflow-hidden"
+              className="bg-card border border-border rounded-3xl max-w-3xl w-full overflow-hidden max-h-[90vh] overflow-y-auto"
             >
-              <div className="h-56 relative" style={{ background: active.gradient }}>
+              <div className="h-64 relative overflow-hidden">
+                <img src={active.image} alt={active.title} className="absolute inset-0 w-full h-full object-cover" />
+                <div className="absolute inset-0 mix-blend-overlay opacity-50" style={{ background: active.gradient }} />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/30 to-transparent" />
                 <button onClick={() => setActive(null)}
-                        className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/30 backdrop-blur text-white flex items-center justify-center hover:bg-black/50">
+                        className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/40 backdrop-blur text-white flex items-center justify-center hover:bg-black/60">
                   <X className="w-5 h-5" />
                 </button>
-              </div>
-              <div className="p-8">
-                <div className="text-xs uppercase tracking-wider text-accent-blue mb-2">{active.category}</div>
-                <h3 className="font-display text-3xl font-bold mb-4">{active.title}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">{active.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {active.tech.map(t => (
-                    <span key={t} className="px-3 py-1 rounded-full text-xs font-medium bg-secondary text-foreground border border-border">{t}</span>
-                  ))}
+                <div className="absolute bottom-4 left-6 right-6">
+                  <div className="text-xs uppercase tracking-wider text-accent-blue mb-1">{active.category}</div>
+                  <h3 className="font-display text-3xl font-bold text-white">{active.title}</h3>
                 </div>
               </div>
+              <div className="p-8 space-y-6">
+                <p className="text-muted-foreground leading-relaxed">{active.description}</p>
+
+                <div className="grid grid-cols-3 gap-3">
+                  {active.results.map(r => (
+                    <div key={r.label} className="rounded-xl border border-border bg-secondary/40 p-4 text-center">
+                      <div className="font-display text-2xl font-bold gradient-text">{r.value}</div>
+                      <div className="text-[11px] uppercase tracking-wider text-muted-foreground mt-1">{r.label}</div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <div className="text-xs uppercase tracking-wider text-accent-purple mb-3">Key features</div>
+                    <ul className="space-y-2">
+                      {active.features.map(f => (
+                        <li key={f} className="flex gap-2 text-sm text-foreground/90">
+                          <span className="text-accent-blue mt-1">▹</span>{f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="space-y-4">
+                    <div>
+                      <div className="text-xs uppercase tracking-wider text-accent-purple mb-1">Client</div>
+                      <div className="text-sm">{active.client}</div>
+                    </div>
+                    <div>
+                      <div className="text-xs uppercase tracking-wider text-accent-purple mb-1">Timeline</div>
+                      <div className="text-sm">{active.timeline}</div>
+                    </div>
+                    <div>
+                      <div className="text-xs uppercase tracking-wider text-accent-purple mb-2">Stack</div>
+                      <div className="flex flex-wrap gap-2">
+                        {active.tech.map(t => (
+                          <span key={t} className="px-3 py-1 rounded-full text-xs font-medium bg-secondary text-foreground border border-border">{t}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </motion.div>
           </motion.div>
         )}
