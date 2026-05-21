@@ -10,50 +10,85 @@ type Project = {
   description: string
   tech: string[]
   gradient: string
+  image: string
+  features: string[]
+  results: { label: string; value: string }[]
+  timeline: string
+  client: string
 }
 
 const projects: Project[] = [
   {
     title: 'Nordic Bloom Eshop',
     category: 'Eshop',
-    description: 'Headless Shopify store with custom checkout, AR product preview, and a 38% lift in conversion.',
+    description: 'Headless Shopify store with custom checkout, AR product preview, and a 38% lift in conversion. Built for a Scandinavian floral brand expanding across the EU.',
     tech: ['Next.js', 'Shopify', 'GSAP'],
     gradient: 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)',
+    image: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=1200&q=80&auto=format&fit=crop',
+    features: ['Headless Shopify backend', 'One-page checkout with Apple/Google Pay', 'AR product preview on mobile', 'Multi-currency & multi-language'],
+    results: [{ label: 'Conversion lift', value: '+38%' }, { label: 'Page speed', value: '98/100' }, { label: 'Avg. order value', value: '+22%' }],
+    timeline: '10 weeks',
+    client: 'Nordic Bloom (Sweden)',
   },
   {
     title: 'Lumen Wellness Booking',
     category: 'Booking System',
-    description: 'Multi-location appointment platform with Stripe payments, SMS reminders and clinician dashboards.',
+    description: 'Multi-location appointment platform with Stripe payments, SMS reminders and clinician dashboards. Replaced 3 disconnected SaaS tools.',
     tech: ['React', 'Supabase', 'Stripe'],
     gradient: 'linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80&auto=format&fit=crop',
+    features: ['Real-time availability per clinician', 'Stripe deposits & cancellation policy', 'Automated SMS + email reminders', 'Admin dashboard with reports'],
+    results: [{ label: 'No-show rate', value: '−61%' }, { label: 'Bookings/month', value: '4,200+' }, { label: 'Setup time', value: '6 weeks' }],
+    timeline: '6 weeks',
+    client: 'Lumen Wellness Group',
   },
   {
     title: 'Helix CRM',
     category: 'Custom CRM',
-    description: 'Internal CRM replacing four SaaS tools for a 60-person agency — saved €38k/year in subscriptions.',
+    description: 'Internal CRM replacing four SaaS tools for a 60-person agency — saved €38k/year in subscriptions and unified pipeline, billing and reporting.',
     tech: ['Next.js', 'PostgreSQL', 'tRPC'],
     gradient: 'linear-gradient(135deg, #a855f7 0%, #ec4899 100%)',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80&auto=format&fit=crop',
+    features: ['Kanban deal pipeline', 'Automated invoicing & reminders', 'Role-based permissions', 'Slack & Gmail integrations'],
+    results: [{ label: 'Saved /year', value: '€38k' }, { label: 'Tools replaced', value: '4' }, { label: 'Active users', value: '60' }],
+    timeline: '14 weeks',
+    client: 'Helix Agency',
   },
   {
     title: 'Aether Studios Website',
     category: 'Website',
-    description: 'Editorial brand site for a film studio with cinematic transitions and a custom CMS.',
+    description: 'Editorial brand site for a film studio with cinematic transitions and a custom CMS so the team can publish projects without engineering help.',
     tech: ['Astro', 'Sanity', 'Framer Motion'],
     gradient: 'linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%)',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80&auto=format&fit=crop',
+    features: ['Custom Sanity CMS', 'Cinematic page transitions', 'Optimized video streaming', 'Editorial case studies layout'],
+    results: [{ label: 'Lighthouse score', value: '99' }, { label: 'Inbound leads', value: '+140%' }, { label: 'Time on site', value: '3:42' }],
+    timeline: '8 weeks',
+    client: 'Aether Studios',
   },
   {
     title: 'Orbit Launch Page',
     category: 'Landing Page',
-    description: 'Pre-launch waitlist page that captured 12,400 signups in the first week.',
+    description: 'Pre-launch waitlist page that captured 12,400 signups in the first week through tight copy, social proof and a referral loop.',
     tech: ['Vite', 'Resend', 'Cloud'],
     gradient: 'linear-gradient(135deg, #f43f5e 0%, #8b5cf6 100%)',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80&auto=format&fit=crop',
+    features: ['Viral referral mechanic', 'Email capture with Resend', 'A/B tested hero variants', 'Analytics & funnel tracking'],
+    results: [{ label: 'Signups (week 1)', value: '12,400' }, { label: 'Conversion', value: '21%' }, { label: 'CAC', value: '€0.12' }],
+    timeline: '2 weeks',
+    client: 'Orbit (YC S24)',
   },
   {
     title: 'Pulse Analytics Dashboard',
     category: 'Custom Solution',
-    description: 'Realtime analytics dashboard with AI insights for a logistics SaaS used by 300+ teams.',
+    description: 'Realtime analytics dashboard with AI insights for a logistics SaaS used by 300+ teams. Surfaces anomalies in fleet performance automatically.',
     tech: ['React', 'D3', 'OpenAI'],
     gradient: 'linear-gradient(135deg, #10b981 0%, #3b82f6 100%)',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80&auto=format&fit=crop&sat=-20',
+    features: ['Realtime data via websockets', 'AI-generated daily summaries', 'Custom D3 visualizations', 'CSV / API exports'],
+    results: [{ label: 'Active teams', value: '300+' }, { label: 'Queries/day', value: '1.2M' }, { label: 'Insight accuracy', value: '94%' }],
+    timeline: '12 weeks',
+    client: 'Pulse Logistics',
   },
 ]
 
