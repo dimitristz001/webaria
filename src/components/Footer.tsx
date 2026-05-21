@@ -31,7 +31,7 @@ export function Footer() {
           <div className="col-span-6 md:col-span-3">
             <h4 className="font-display text-sm uppercase tracking-widest text-muted-foreground mb-4">Explore</h4>
             <ul className="space-y-2">
-              {['Services', 'Work', 'Process', 'Testimonials', 'Contact'].map(l => (
+              {['Services', 'Work', 'Process', 'Contact'].map(l => (
                 <li key={l}>
                   <a href={`#${l.toLowerCase()}`} className="text-foreground/80 hover:text-foreground hover:gradient-text transition-all">{l}</a>
                 </li>
