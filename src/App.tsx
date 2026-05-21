@@ -2,7 +2,7 @@ import { Hero } from './components/Hero'
 import { Services } from './components/Services'
 import { Portfolio } from './components/Portfolio'
 import { About } from './components/About'
-import { Awards } from './components/Awards'
+
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 
@@ -14,7 +14,7 @@ export default function App() {
         <section id="services" aria-label="Services"><Services /></section>
         <section id="portfolio" aria-label="Work"><Portfolio /></section>
         <section id="about" aria-label="Process"><About /></section>
-        <section id="awards" aria-label="Testimonials"><Awards /></section>
+        
         <section id="contact" aria-label="Contact"><Contact /></section>
       </main>
       <Footer />
