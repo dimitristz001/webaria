@@ -9,7 +9,6 @@ const NAV = [
   { href: '#portfolio', label: 'Work' },
   { href: '#about', label: 'Process' },
   { href: '#contact', label: 'Contact' },
-  { href: '#contact', label: 'Contact' },
 ]
 
 export function Hero() {
