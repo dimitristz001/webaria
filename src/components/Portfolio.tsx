@@ -145,9 +145,8 @@ export function Portfolio() {
 
               {/* Bottom info */}
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                <div className="text-xs uppercase tracking-wider text-white/70 mb-2">{p.category}</div>
                 <div className="flex items-end justify-between gap-2">
-                  <h3 className="font-display text-xl font-bold">{p.title}</h3>
+                  <h3 className="font-display text-xl font-bold">{p.category}</h3>
                   <span className="w-9 h-9 rounded-full bg-white/15 backdrop-blur flex items-center justify-center transition-transform group-hover:scale-110 group-hover:rotate-45">
                     <ExternalLink className="w-4 h-4" />
                   </span>
