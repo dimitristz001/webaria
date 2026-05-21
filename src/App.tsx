@@ -14,7 +14,7 @@ export default function App() {
         <section id="services" aria-label="Services"><Services /></section>
         <section id="portfolio" aria-label="Work"><Portfolio /></section>
         <section id="about" aria-label="Process"><About /></section>
-        <section id="awards" aria-label="Testimonials"><Awards /></section>
+        
         <section id="contact" aria-label="Contact"><Contact /></section>
       </main>
       <Footer />
