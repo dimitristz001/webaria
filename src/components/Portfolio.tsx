@@ -130,34 +130,18 @@ export function Portfolio() {
               whileHover={{ y: -8 }}
               className="group text-left relative aspect-[4/5] rounded-2xl overflow-hidden border border-border gentle-animation"
             >
-              {/* Visual */}
-              <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-                   style={{ background: p.gradient }} />
-              <div className="absolute inset-0 opacity-30 mix-blend-overlay"
-                   style={{
-                     backgroundImage: `radial-gradient(circle at 30% 20%, rgba(255,255,255,.5), transparent 40%),
-                                       radial-gradient(circle at 70% 80%, rgba(0,0,0,.5), transparent 40%)`,
-                   }} />
-              {/* Mock browser chrome */}
-              <div className="absolute inset-x-6 top-6 bottom-32 rounded-lg bg-black/40 backdrop-blur-sm border border-white/10 overflow-hidden">
-                <div className="flex items-center gap-1.5 px-3 py-2 border-b border-white/10">
-                  <span className="w-2 h-2 rounded-full bg-red-400/70" />
-                  <span className="w-2 h-2 rounded-full bg-yellow-400/70" />
-                  <span className="w-2 h-2 rounded-full bg-green-400/70" />
-                </div>
-                <div className="p-4 space-y-2">
-                  <div className="h-2 w-2/3 rounded bg-white/30" />
-                  <div className="h-2 w-1/2 rounded bg-white/20" />
-                  <div className="grid grid-cols-3 gap-2 mt-4">
-                    <div className="h-8 rounded bg-white/15" />
-                    <div className="h-8 rounded bg-white/10" />
-                    <div className="h-8 rounded bg-white/15" />
-                  </div>
-                </div>
-              </div>
+              {/* Image */}
+              <img
+                src={p.image}
+                alt={p.title}
+                loading="lazy"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              {/* Color tint */}
+              <div className="absolute inset-0 mix-blend-overlay opacity-60" style={{ background: p.gradient }} />
 
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-black/10 opacity-90 group-hover:opacity-100 transition-opacity" />
 
               {/* Bottom info */}
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
@@ -168,8 +152,12 @@ export function Portfolio() {
                     <ExternalLink className="w-4 h-4" />
                   </span>
                 </div>
+                <p className="mt-3 text-xs text-white/0 group-hover:text-white/80 transition-colors line-clamp-2">
+                  {p.description}
+                </p>
               </div>
             </motion.button>
+
           ))}
         </div>
       </div>
