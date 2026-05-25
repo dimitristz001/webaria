@@ -1,8 +1,11 @@
 'use client'
 
 import { Sparkles, Twitter, Linkedin, Instagram, Github } from 'lucide-react'
+import { useI18n } from '@/lib/i18n'
 
 export function Footer() {
+  const { t } = useI18n()
+  const hrefs = ['#services', '#portfolio', '#about', '#contact']
   return (
     <footer className="relative bg-card/40 border-t border-border py-16">
       <div className="container mx-auto px-6 lg:px-12">
@@ -15,8 +18,7 @@ export function Footer() {
               <span className="font-display text-xl font-bold">Webistry</span>
             </a>
             <p className="text-muted-foreground max-w-md leading-relaxed mb-6">
-              A digital agency crafting high-performance websites, eshops, booking systems
-              and custom digital products that turn visitors into customers.
+              {t.footer.desc}
             </p>
             <div className="flex items-center gap-3">
               {[Twitter, Linkedin, Instagram, Github].map((Icon, i) => (
@@ -29,20 +31,20 @@ export function Footer() {
           </div>
 
           <div className="col-span-6 md:col-span-3">
-            <h4 className="font-display text-sm uppercase tracking-widest text-muted-foreground mb-4">Explore</h4>
+            <h4 className="font-display text-sm uppercase tracking-widest text-muted-foreground mb-4">{t.footer.explore}</h4>
             <ul className="space-y-2">
-              {['Services', 'Work', 'Process', 'Contact'].map(l => (
+              {t.footer.links.map((l: string, i: number) => (
                 <li key={l}>
-                  <a href={`#${l.toLowerCase()}`} className="text-foreground/80 hover:text-foreground hover:gradient-text transition-all">{l}</a>
+                  <a href={hrefs[i]} className="text-foreground/80 hover:text-foreground hover:gradient-text transition-all">{l}</a>
                 </li>
               ))}
             </ul>
           </div>
 
           <div className="col-span-6 md:col-span-4">
-            <h4 className="font-display text-sm uppercase tracking-widest text-muted-foreground mb-4">Services</h4>
+            <h4 className="font-display text-sm uppercase tracking-widest text-muted-foreground mb-4">{t.footer.services}</h4>
             <ul className="space-y-2">
-              {['Website Development', 'Landing Pages', 'E-commerce', 'Booking Systems', 'CRM Systems', 'Custom Solutions'].map(l => (
+              {t.footer.serviceLinks.map((l: string) => (
                 <li key={l}>
                   <a href="#services" className="text-foreground/80 hover:text-foreground transition-colors">{l}</a>
                 </li>
@@ -52,8 +54,8 @@ export function Footer() {
         </div>
 
         <div className="mt-14 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <div>© {new Date().getFullYear()} Webistry. All rights reserved.</div>
-          <div>Crafted with intention · Built to convert</div>
+          <div>© {new Date().getFullYear()} Webistry. {t.footer.rights}</div>
+          <div>{t.footer.tag}</div>
         </div>
       </div>
     </footer>
