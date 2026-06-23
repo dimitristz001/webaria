@@ -54,7 +54,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <div>© {new Date().getFullYear()} Webistry. {t.footer.rights}</div>
+          <div>© {new Date().getFullYear()} Webaria. {t.footer.rights}</div>
           <div>{t.footer.tag}</div>
         </div>
       </div>
