@@ -93,7 +93,7 @@ const translations: Record<Lang, Dict> = {
       links: ['Services', 'Work', 'Process', 'Contact'],
       serviceLinks: ['Website Development', 'Landing Pages', 'E-commerce', 'Booking Systems', 'CRM Systems', 'Custom Solutions'],
       rights: 'All rights reserved.',
-      tag: 'Crafted with intention · Built to convert',
+      tag: 'Crafted with care · Made in-house',
     },
   },
   el: {
