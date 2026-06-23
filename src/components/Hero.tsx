@@ -12,6 +12,7 @@ export function Hero() {
 
   const NAV = [
     { href: '#services', label: t.nav.services },
+    { href: '#pricing', label: t.nav.pricing },
     { href: '#portfolio', label: t.nav.work },
     { href: '#about', label: t.nav.process },
     { href: '#contact', label: t.nav.contact },

@@ -1,24 +1,21 @@
-import { Hero } from './components/Hero'
-import { Services } from './components/Services'
-import { Portfolio } from './components/Portfolio'
-import { About } from './components/About'
-import { Contact } from './components/Contact'
-import { Footer } from './components/Footer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { I18nProvider } from './lib/i18n'
+import Home from './pages/Home'
+import CaseStudy from './pages/CaseStudy'
+import NotFound from './pages/NotFound'
+import { Toaster } from '@/components/ui/sonner'
 
 export default function App() {
   return (
     <I18nProvider>
-      <div className="min-h-screen bg-background text-foreground">
-        <main className="relative" role="main">
-          <section id="hero" aria-label="Hero"><Hero /></section>
-          <section id="services" aria-label="Services"><Services /></section>
-          <section id="portfolio" aria-label="Work"><Portfolio /></section>
-          <section id="about" aria-label="Process"><About /></section>
-          <section id="contact" aria-label="Contact"><Contact /></section>
-        </main>
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/work/:slug" element={<CaseStudy />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Toaster />
+      </BrowserRouter>
     </I18nProvider>
   )
 }

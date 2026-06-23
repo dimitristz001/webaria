@@ -1,29 +1,63 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Mail, MapPin, Send, Twitter, Linkedin, Instagram, Github } from 'lucide-react'
-import { useToast } from '@/hooks/use-toast'
+import { z } from 'zod'
+import { toast } from 'sonner'
 import { useI18n } from '@/lib/i18n'
+import { supabase } from '@/integrations/supabase/client'
+
+const schema = z.object({
+  name: z.string().trim().min(1).max(100),
+  email: z.string().trim().email().max(255),
+  message: z.string().trim().min(1).max(2000),
+  service: z.string().max(80).optional(),
+})
+
+const SERVICES = ['Website', 'Eshop', 'Booking System', 'Custom / CRM']
 
 export function Contact() {
-  const { toast } = useToast()
-  const { t } = useI18n()
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const { t, lang } = useI18n()
+  const [formData, setFormData] = useState({ name: '', email: '', message: '', service: '' })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    const pre = sessionStorage.getItem('webaria:preselectService')
+    if (pre) {
+      setFormData(p => ({ ...p, service: pre }))
+      sessionStorage.removeItem('webaria:preselectService')
+    }
+  }, [])
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
-      toast({ title: t.contact.fillAll, variant: 'destructive' })
+
+    const parsed = schema.safeParse(formData)
+    if (!parsed.success) {
+      toast.error(t.contact.fillAll)
       return
     }
+
     setIsSubmitting(true)
-    setTimeout(() => {
-      toast({ title: t.contact.sent, description: t.contact.sentDesc })
-      setFormData({ name: '', email: '', message: '' })
+    try {
+      const { name, email, message, service } = parsed.data
+      const composed = service ? `[${service}] ${message}` : message
+
+      const { error } = await supabase.from('contact_messages').insert({
+        name, email, message: composed, lang, source: 'webaria-contact-form',
+      })
+
+      if (error) throw error
+
+      toast.success(t.contact.sent, { description: t.contact.sentDesc })
+      setFormData({ name: '', email: '', message: '', service: '' })
+    } catch (err) {
+      console.error('contact_messages insert failed:', err)
+      toast.error(t.contact.errorTitle, { description: t.contact.errorDesc })
+    } finally {
       setIsSubmitting(false)
-    }, 900)
+    }
   }
 
   return (
@@ -65,7 +99,7 @@ export function Contact() {
               <div>
                 <label htmlFor="name" className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.contact.name}</label>
                 <input
-                  id="name" type="text" maxLength={100}
+                  id="name" type="text" maxLength={100} required
                   value={formData.name}
                   onChange={(e) => setFormData(p => ({ ...p, name: e.target.value }))}
                   className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent-blue transition-colors"
@@ -75,7 +109,7 @@ export function Contact() {
               <div>
                 <label htmlFor="email" className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.contact.email}</label>
                 <input
-                  id="email" type="email" maxLength={255}
+                  id="email" type="email" maxLength={255} required
                   value={formData.email}
                   onChange={(e) => setFormData(p => ({ ...p, email: e.target.value }))}
                   className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent-blue transition-colors"
@@ -83,10 +117,26 @@ export function Contact() {
                 />
               </div>
             </div>
+
+            <div>
+              <label htmlFor="service" className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.contact.service}</label>
+              <select
+                id="service"
+                value={formData.service}
+                onChange={(e) => setFormData(p => ({ ...p, service: e.target.value }))}
+                className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground focus:outline-none focus:border-accent-blue transition-colors"
+              >
+                <option value="">{t.contact.servicePh}</option>
+                {SERVICES.map(s => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
+            </div>
+
             <div>
               <label htmlFor="message" className="block text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-2">{t.contact.message}</label>
               <textarea
-                id="message" rows={6} maxLength={1500}
+                id="message" rows={6} maxLength={2000} required
                 value={formData.message}
                 onChange={(e) => setFormData(p => ({ ...p, message: e.target.value }))}
                 className="w-full px-4 py-3 rounded-xl bg-background border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent-blue transition-colors resize-none"
@@ -109,13 +159,13 @@ export function Contact() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="lg:col-span-2 space-y-4"
           >
-            <a href="mailto:hello@webistry.io"
+            <a href="mailto:info@webaria.gr"
                className="block p-6 rounded-2xl bg-card border border-border hover:border-accent-blue/50 transition-colors group">
               <div className="flex items-center gap-3 mb-2 text-accent-blue">
                 <Mail className="w-5 h-5" />
                 <span className="text-xs uppercase tracking-widest">{t.contact.email}</span>
               </div>
-              <div className="font-display text-xl font-semibold group-hover:gradient-text transition-all">hello@webistry.io</div>
+              <div className="font-display text-xl font-semibold group-hover:gradient-text transition-all">info@webaria.gr</div>
             </a>
 
             <div className="p-6 rounded-2xl bg-card border border-border">
