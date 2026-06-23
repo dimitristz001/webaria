@@ -13,8 +13,8 @@ const translations: Record<Lang, Dict> = {
       badge: 'Digital Agency · Available for new projects',
       title1: 'We Build ',
       titleAccent: 'Digital Experiences',
-      title2: ' That Convert.',
-      desc: 'Webistry is a design-led studio crafting high-performance websites, eshops, booking systems and custom digital products that turn visitors into customers.',
+      title2: '.',
+      desc: 'We’re Webaria — a small team that builds beautiful, fast websites, eshops and booking systems for people who care about how their brand shows up online.',
       cta: 'Get Started',
       view: 'View Work',
       stats: [
@@ -88,12 +88,12 @@ const translations: Record<Lang, Dict> = {
       follow: 'Follow us',
     },
     footer: {
-      desc: 'A digital agency crafting high-performance websites, eshops, booking systems and custom digital products that turn visitors into customers.',
+      desc: 'A small digital studio building websites, eshops and booking systems that feel as good as they perform.',
       explore: 'Explore', services: 'Services',
       links: ['Services', 'Work', 'Process', 'Contact'],
       serviceLinks: ['Website Development', 'Landing Pages', 'E-commerce', 'Booking Systems', 'CRM Systems', 'Custom Solutions'],
       rights: 'All rights reserved.',
-      tag: 'Crafted with intention · Built to convert',
+      tag: 'Crafted with care · Made in-house',
     },
   },
   el: {
@@ -102,8 +102,8 @@ const translations: Record<Lang, Dict> = {
       badge: 'Digital Agency · Διαθέσιμοι για νέα έργα',
       title1: 'Δημιουργούμε ',
       titleAccent: 'Ψηφιακές Εμπειρίες',
-      title2: ' που Μετατρέπουν.',
-      desc: 'Η Webistry είναι ένα design-first studio που φτιάχνει ταχύτατα websites, eshops, συστήματα κρατήσεων και custom ψηφιακά προϊόντα που μετατρέπουν επισκέπτες σε πελάτες.',
+      title2: '.',
+      desc: 'Είμαστε η Webaria — μια μικρή ομάδα που φτιάχνει όμορφα και γρήγορα websites, eshops και συστήματα κρατήσεων για ανθρώπους που νοιάζονται για το brand τους.',
       cta: 'Ξεκινήστε',
       view: 'Δείτε τα Έργα',
       stats: [
@@ -177,12 +177,12 @@ const translations: Record<Lang, Dict> = {
       follow: 'Ακολουθήστε μας',
     },
     footer: {
-      desc: 'Ένα digital agency που φτιάχνει ταχύτατα websites, eshops, συστήματα κρατήσεων και custom ψηφιακά προϊόντα που μετατρέπουν επισκέπτες σε πελάτες.',
+      desc: 'Ένα μικρό ψηφιακό studio που φτιάχνει websites, eshops και συστήματα κρατήσεων με μεράκι και προσοχή στη λεπτομέρεια.',
       explore: 'Εξερευνήστε', services: 'Υπηρεσίες',
       links: ['Υπηρεσίες', 'Έργα', 'Διαδικασία', 'Επικοινωνία'],
       serviceLinks: ['Κατασκευή Ιστοσελίδων', 'Landing Pages', 'E-commerce', 'Συστήματα Κρατήσεων', 'Συστήματα CRM', 'Custom Λύσεις'],
       rights: 'Με την επιφύλαξη παντός δικαιώματος.',
-      tag: 'Φτιαγμένο με μεράκι · Σχεδιασμένο για μετατροπές',
+      tag: 'Φτιαγμένο με μεράκι · Από τη δική μας ομάδα',
     },
   },
 }
