@@ -15,7 +15,7 @@ export function Footer() {
               <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center">
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
-              <span className="font-display text-xl font-bold">Webistry</span>
+              <span className="font-display text-xl font-bold">Webaria</span>
             </a>
             <p className="text-muted-foreground max-w-md leading-relaxed mb-6">
               {t.footer.desc}
