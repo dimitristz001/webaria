@@ -177,7 +177,7 @@ const translations: Record<Lang, Dict> = {
       follow: 'Ακολουθήστε μας',
     },
     footer: {
-      desc: 'Ένα digital agency που φτιάχνει ταχύτατα websites, eshops, συστήματα κρατήσεων και custom ψηφιακά προϊόντα που μετατρέπουν επισκέπτες σε πελάτες.',
+      desc: 'Ένα μικρό ψηφιακό studio που φτιάχνει websites, eshops και συστήματα κρατήσεων με μεράκι και προσοχή στη λεπτομέρεια.',
       explore: 'Εξερευνήστε', services: 'Υπηρεσίες',
       links: ['Υπηρεσίες', 'Έργα', 'Διαδικασία', 'Επικοινωνία'],
       serviceLinks: ['Κατασκευή Ιστοσελίδων', 'Landing Pages', 'E-commerce', 'Συστήματα Κρατήσεων', 'Συστήματα CRM', 'Custom Λύσεις'],
