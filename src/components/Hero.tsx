@@ -59,7 +59,7 @@ export function Hero() {
             <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center glow-blue group-hover:scale-110 transition-transform">
               <Sparkles className="w-4 h-4 text-white" />
             </div>
-            <span className="font-display text-xl font-bold tracking-tight">Webistry</span>
+            <span className="font-display text-xl font-bold tracking-tight">Webaria</span>
           </a>
 
           <div className="hidden md:flex items-center gap-8">
