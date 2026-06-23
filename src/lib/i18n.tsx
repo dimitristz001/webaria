@@ -102,8 +102,8 @@ const translations: Record<Lang, Dict> = {
       badge: 'Digital Agency · Διαθέσιμοι για νέα έργα',
       title1: 'Δημιουργούμε ',
       titleAccent: 'Ψηφιακές Εμπειρίες',
-      title2: ' που Μετατρέπουν.',
-      desc: 'Η Webistry είναι ένα design-first studio που φτιάχνει ταχύτατα websites, eshops, συστήματα κρατήσεων και custom ψηφιακά προϊόντα που μετατρέπουν επισκέπτες σε πελάτες.',
+      title2: '.',
+      desc: 'Είμαστε η Webaria — μια μικρή ομάδα που φτιάχνει όμορφα και γρήγορα websites, eshops και συστήματα κρατήσεων για ανθρώπους που νοιάζονται για το brand τους.',
       cta: 'Ξεκινήστε',
       view: 'Δείτε τα Έργα',
       stats: [
