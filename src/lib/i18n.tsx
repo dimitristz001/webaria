@@ -13,8 +13,8 @@ const translations: Record<Lang, Dict> = {
       badge: 'Digital Agency · Available for new projects',
       title1: 'We Build ',
       titleAccent: 'Digital Experiences',
-      title2: ' That Convert.',
-      desc: 'Webistry is a design-led studio crafting high-performance websites, eshops, booking systems and custom digital products that turn visitors into customers.',
+      title2: '.',
+      desc: 'We’re Webaria — a small team that builds beautiful, fast websites, eshops and booking systems for people who care about how their brand shows up online.',
       cta: 'Get Started',
       view: 'View Work',
       stats: [
