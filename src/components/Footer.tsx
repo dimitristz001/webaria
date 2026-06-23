@@ -11,7 +11,7 @@ export function Footer() {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-12 gap-10">
           <div className="col-span-12 md:col-span-5">
-            <a href="#hero" className="flex items-center gap-2 mb-5">
+            <a href="/" className="flex items-center gap-2 mb-5">
               <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center">
                 <Sparkles className="w-4 h-4 text-white" />
               </div>
