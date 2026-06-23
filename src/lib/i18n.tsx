@@ -88,7 +88,7 @@ const translations: Record<Lang, Dict> = {
       follow: 'Follow us',
     },
     footer: {
-      desc: 'A digital agency crafting high-performance websites, eshops, booking systems and custom digital products that turn visitors into customers.',
+      desc: 'A small digital studio building websites, eshops and booking systems that feel as good as they perform.',
       explore: 'Explore', services: 'Services',
       links: ['Services', 'Work', 'Process', 'Contact'],
       serviceLinks: ['Website Development', 'Landing Pages', 'E-commerce', 'Booking Systems', 'CRM Systems', 'Custom Solutions'],
