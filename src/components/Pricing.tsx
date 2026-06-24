@@ -2,18 +2,19 @@
 
 import { motion } from 'framer-motion'
 import { Check, ArrowRight, Sparkles } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 import { useI18n } from '@/lib/i18n'
 
 export function Pricing() {
   const { t } = useI18n()
+  const navigate = useNavigate()
   const items = t.pricing.items as Array<{ name: string; tagline: string; features: string[]; popular?: boolean }>
 
   const goToContact = (serviceName: string) => {
     if (typeof window !== 'undefined') {
       sessionStorage.setItem('webaria:preselectService', serviceName)
     }
-    const el = document.getElementById('contact')
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    navigate('/#contact')
   }
 
   return (
