@@ -16,11 +16,10 @@ export function NavBar() {
   const onHome = pathname === '/'
 
   const NAV = [
-    { to: onHome ? '/#services' : '/#services', label: t.nav.services },
+    { to: '/services', label: t.nav.services },
     { to: '/pricing', label: t.nav.pricing },
     { to: '/work', label: t.nav.work },
-    { to: '/process', label: t.nav.process },
-    { to: '/#contact', label: t.nav.contact },
+    { to: '/contact', label: t.nav.contact },
   ]
 
   useEffect(() => {
