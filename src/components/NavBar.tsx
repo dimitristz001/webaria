@@ -1,10 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Menu, X, ArrowRight, Sparkles, Languages } from 'lucide-react'
+import { Menu, X, ArrowRight, Languages } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useI18n } from '@/lib/i18n'
+import logoMark from '@/assets/webaria-mark.png.asset.json'
+
 
 export function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false)
