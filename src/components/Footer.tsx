@@ -1,7 +1,7 @@
 'use client'
 
 import { Twitter, Linkedin, Instagram, Github } from 'lucide-react'
-import logoMark from '@/assets/webaria-mark.png.asset.json'
+const logoMark = { url: '/webaria-mark.png' }
 import { useI18n } from '@/lib/i18n'
 
 export function Footer() {
