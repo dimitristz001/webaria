@@ -53,9 +53,7 @@ export function NavBar() {
     >
       <div className="container mx-auto px-6 lg:px-12 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center glow-blue group-hover:scale-110 transition-transform">
-            <Sparkles className="w-4 h-4 text-white" />
-          </div>
+          <img src={logoMark.url} alt="Webaria" className="w-9 h-9 object-contain group-hover:scale-110 transition-transform" />
           <span className="font-display text-xl font-bold tracking-tight">Webaria</span>
         </Link>
 
