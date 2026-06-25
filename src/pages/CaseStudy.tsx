@@ -38,7 +38,7 @@ export default function CaseStudy() {
             </div>
             <span className="font-display text-xl font-bold tracking-tight text-white drop-shadow">Webaria</span>
           </Link>
-          <Link to="/#portfolio"
+          <Link to="/work"
             className="inline-flex items-center gap-2 text-sm font-medium text-white/90 hover:text-white px-4 py-2 rounded-lg bg-black/30 backdrop-blur border border-white/15">
             <ArrowLeft className="w-4 h-4" /> {t.caseStudy.back}
           </Link>
@@ -195,7 +195,7 @@ export default function CaseStudy() {
           <div className="p-8 lg:p-10 rounded-2xl bg-card border border-border">
             <h3 className="font-display text-2xl lg:text-3xl font-bold mb-3">{t.caseStudy.ctaTitle}</h3>
             <p className="text-muted-foreground mb-6">{t.caseStudy.ctaDesc}</p>
-            <Link to="/#contact"
+            <Link to="/contact"
               className="inline-flex items-center gap-2 gradient-bg text-white font-semibold px-6 py-3 rounded-xl glow-purple">
               {t.caseStudy.ctaButton} <ArrowRight className="w-4 h-4" />
             </Link>

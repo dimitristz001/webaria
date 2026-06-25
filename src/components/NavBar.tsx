@@ -16,11 +16,10 @@ export function NavBar() {
   const onHome = pathname === '/'
 
   const NAV = [
-    { to: onHome ? '/#services' : '/#services', label: t.nav.services },
+    { to: '/services', label: t.nav.services },
     { to: '/pricing', label: t.nav.pricing },
     { to: '/work', label: t.nav.work },
-    { to: '/process', label: t.nav.process },
-    { to: '/#contact', label: t.nav.contact },
+    { to: '/contact', label: t.nav.contact },
   ]
 
   useEffect(() => {
@@ -69,7 +68,7 @@ export function NavBar() {
 
         <div className="flex items-center gap-3">
           <LangSwitch className="hidden sm:inline-flex" />
-          <Link to="/#contact"
+          <Link to="/contact"
             className="hidden sm:inline-flex items-center gap-2 gradient-bg text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:scale-105 transition-transform glow-purple">
             {t.nav.cta} <ArrowRight className="w-4 h-4" />
           </Link>
@@ -95,7 +94,7 @@ export function NavBar() {
             </span>
             <LangSwitch />
           </div>
-          <Link to="/#contact" onClick={() => setOpen(false)}
+          <Link to="/contact" onClick={() => setOpen(false)}
             className="gradient-bg text-white font-semibold px-5 py-3 rounded-lg text-center">
             {t.nav.cta}
           </Link>

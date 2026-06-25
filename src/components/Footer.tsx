@@ -6,7 +6,7 @@ import { useI18n } from '@/lib/i18n'
 
 export function Footer() {
   const { t } = useI18n()
-  const hrefs = ['/#services', '/pricing', '/work', '/process', '/#contact']
+  const hrefs = ['/services', '/pricing', '/work', '/contact']
   return (
     <footer className="relative bg-card/40 border-t border-border py-16">
       <div className="container mx-auto px-6 lg:px-12">
@@ -45,7 +45,7 @@ export function Footer() {
             <ul className="space-y-2">
               {t.footer.serviceLinks.map((l: string) => (
                 <li key={l}>
-                  <a href="#services" className="text-foreground/80 hover:text-foreground transition-colors">{l}</a>
+                  <a href="/services" className="text-foreground/80 hover:text-foreground transition-colors">{l}</a>
                 </li>
               ))}
             </ul>

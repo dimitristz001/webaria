@@ -45,7 +45,7 @@ export function Hero() {
 
           <div className="flex flex-wrap items-center gap-4">
             <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
-              <Link to="/#contact"
+              <Link to="/contact"
                 className="inline-flex items-center gap-2 gradient-bg text-white font-semibold px-7 py-4 rounded-xl glow-purple">
                 {t.hero.cta} <ArrowRight className="w-5 h-5" />
               </Link>

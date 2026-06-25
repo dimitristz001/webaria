@@ -138,7 +138,7 @@ const translations: Record<Lang, Dict> = {
     footer: {
       desc: 'A small digital studio building websites, eshops and booking systems that feel as good as they perform.',
       explore: 'Explore', services: 'Services',
-      links: ['Services', 'Pricing', 'Work', 'Process', 'Contact'],
+      links: ['Services', 'Pricing', 'Work', 'Contact'],
       serviceLinks: ['Website Development', 'Landing Pages', 'E-commerce', 'Booking Systems', 'CRM Systems', 'Custom Solutions'],
       rights: 'All rights reserved.',
       tag: 'Crafted with care · Made in-house',
@@ -275,7 +275,7 @@ const translations: Record<Lang, Dict> = {
     footer: {
       desc: 'Ένα μικρό ψηφιακό studio που φτιάχνει websites, eshops και συστήματα κρατήσεων με μεράκι και προσοχή στη λεπτομέρεια.',
       explore: 'Εξερευνήστε', services: 'Υπηρεσίες',
-      links: ['Υπηρεσίες', 'Πακέτα', 'Έργα', 'Διαδικασία', 'Επικοινωνία'],
+      links: ['Υπηρεσίες', 'Πακέτα', 'Έργα', 'Επικοινωνία'],
       serviceLinks: ['Κατασκευή Ιστοσελίδων', 'Landing Pages', 'E-commerce', 'Συστήματα Κρατήσεων', 'Συστήματα CRM', 'Custom Λύσεις'],
       rights: 'Με την επιφύλαξη παντός δικαιώματος.',
       tag: 'Φτιαγμένο με μεράκι · Από τη δική μας ομάδα',
