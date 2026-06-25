@@ -1,6 +1,7 @@
 'use client'
 
-import { Sparkles, Twitter, Linkedin, Instagram, Github } from 'lucide-react'
+import { Twitter, Linkedin, Instagram, Github } from 'lucide-react'
+import logoMark from '@/assets/webaria-mark.png.asset.json'
 import { useI18n } from '@/lib/i18n'
 
 export function Footer() {
@@ -12,9 +13,7 @@ export function Footer() {
         <div className="grid grid-cols-12 gap-10">
           <div className="col-span-12 md:col-span-5">
             <a href="/" className="flex items-center gap-2 mb-5">
-              <div className="w-8 h-8 rounded-lg gradient-bg flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-white" />
-              </div>
+              <img src={logoMark.url} alt="Webaria" className="w-9 h-9 object-contain" />
               <span className="font-display text-xl font-bold">Webaria</span>
             </a>
             <p className="text-muted-foreground max-w-md leading-relaxed mb-6">
