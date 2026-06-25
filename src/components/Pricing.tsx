@@ -14,7 +14,7 @@ export function Pricing() {
     if (typeof window !== 'undefined') {
       sessionStorage.setItem('webaria:preselectService', serviceName)
     }
-    navigate('/#contact')
+    navigate('/contact')
   }
 
   return (
