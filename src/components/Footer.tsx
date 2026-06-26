@@ -46,7 +46,7 @@ export function Footer() {
             <ul className="space-y-2">
               {t.footer.serviceLinks.map((l: string) => (
                 <li key={l}>
-                  <a href="/services" className="text-foreground/80 hover:text-foreground transition-colors">{l}</a>
+                  <Link to="/services" className="text-foreground/80 hover:text-foreground transition-colors">{l}</Link>
                 </li>
               ))}
             </ul>
