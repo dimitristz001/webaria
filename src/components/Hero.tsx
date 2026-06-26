@@ -27,7 +27,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 flex items-center justify-center"
       >
         <img
-          src="/webaria-hero-bg.png"
+          src="/Logo-full.png"
           alt=""
           aria-hidden="true"
           className="w-[min(1000px,85vw)] max-w-none object-contain select-none"
