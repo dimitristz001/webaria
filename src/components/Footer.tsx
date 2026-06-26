@@ -1,6 +1,7 @@
 'use client'
 
 import { Twitter, Linkedin, Instagram, Github } from 'lucide-react'
+import { Link } from 'react-router-dom'
 const logoMark = { url: '/favicon.png' }
 import { useI18n } from '@/lib/i18n'
 
