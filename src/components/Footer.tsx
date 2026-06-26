@@ -1,6 +1,7 @@
 'use client'
 
 import { Twitter, Linkedin, Instagram, Github } from 'lucide-react'
+import { Link } from 'react-router-dom'
 const logoMark = { url: '/favicon.png' }
 import { useI18n } from '@/lib/i18n'
 
@@ -34,7 +35,7 @@ export function Footer() {
             <ul className="space-y-2">
               {t.footer.links.map((l: string, i: number) => (
                 <li key={l}>
-                  <a href={hrefs[i]} className="text-foreground/80 hover:text-foreground hover:gradient-text transition-all">{l}</a>
+                  <Link to={hrefs[i]} className="text-foreground/80 hover:text-foreground hover:gradient-text transition-all">{l}</Link>
                 </li>
               ))}
             </ul>
@@ -45,7 +46,7 @@ export function Footer() {
             <ul className="space-y-2">
               {t.footer.serviceLinks.map((l: string) => (
                 <li key={l}>
-                  <a href="/services" className="text-foreground/80 hover:text-foreground transition-colors">{l}</a>
+                  <Link to="/services" className="text-foreground/80 hover:text-foreground transition-colors">{l}</Link>
                 </li>
               ))}
             </ul>
