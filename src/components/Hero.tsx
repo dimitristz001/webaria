@@ -28,12 +28,6 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-5xl"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-effect mb-8">
-            <span className="w-2 h-2 rounded-full bg-accent-emerald animate-pulse" />
-            <span className="text-xs font-medium text-muted-foreground tracking-wide uppercase">
-              {t.hero.badge}
-            </span>
-          </div>
 
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.05] mb-8">
             {t.hero.title1}<span className="gradient-text">{t.hero.titleAccent}</span>{t.hero.title2}
