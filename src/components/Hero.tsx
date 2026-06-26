@@ -22,28 +22,17 @@ export function Hero() {
       {/* Brand logo backdrop */}
       <motion.div
         initial={{ opacity: 0, scale: 1.05 }}
-        animate={{ opacity: 0.22, scale: 1 }}
+        animate={{ opacity: 0.28, scale: 1 }}
         transition={{ duration: 1.6, ease: 'easeOut' }}
-        className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-2"
+        className="pointer-events-none absolute inset-0 flex items-center justify-center"
       >
         <img
           src="/webaria-hero-bg.png"
           alt=""
           aria-hidden="true"
-          className="w-[min(720px,70vw)] max-w-none object-contain select-none"
-          style={{ filter: 'drop-shadow(0 0 80px hsl(var(--accent-purple) / 0.4))' }}
+          className="w-[min(1000px,85vw)] max-w-none object-contain select-none"
+          style={{ filter: 'drop-shadow(0 0 80px hsl(var(--accent-purple) / 0.45))' }}
         />
-        <span
-          aria-hidden="true"
-          className="font-display font-bold tracking-[0.18em] text-white select-none"
-          style={{
-            fontSize: 'clamp(3rem, 9vw, 7rem)',
-            lineHeight: 1,
-            textShadow: '0 0 40px hsl(var(--accent-blue) / 0.5)',
-          }}
-        >
-          WEBARIA
-        </span>
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background pointer-events-none" />
 
