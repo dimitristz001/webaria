@@ -19,6 +19,24 @@ export function Hero() {
       <div className="absolute bottom-0 left-1/3 w-[500px] h-[500px] rounded-full blur-3xl opacity-20 blob"
            style={{ background: 'radial-gradient(circle, hsl(var(--accent-emerald)) 0%, transparent 70%)', animationDelay: '8s' }} />
 
+      {/* Brand logo backdrop */}
+      <motion.div
+        initial={{ opacity: 0, scale: 1.05 }}
+        animate={{ opacity: 0.18, scale: 1 }}
+        transition={{ duration: 1.6, ease: 'easeOut' }}
+        className="pointer-events-none absolute inset-0 flex items-center justify-center"
+      >
+        <img
+          src="/webaria-hero-bg.png"
+          alt=""
+          aria-hidden="true"
+          className="w-[min(1100px,90vw)] max-w-none object-contain blur-[1px] select-none"
+          style={{ filter: 'drop-shadow(0 0 80px hsl(var(--accent-purple) / 0.35))' }}
+        />
+      </motion.div>
+      <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background pointer-events-none" />
+
+
       <NavBar />
 
       <div className="relative container mx-auto px-6 lg:px-12 pt-40 pb-24 lg:pt-48 lg:pb-32">
