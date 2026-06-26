@@ -35,7 +35,7 @@ export function Footer() {
             <ul className="space-y-2">
               {t.footer.links.map((l: string, i: number) => (
                 <li key={l}>
-                  <a href={hrefs[i]} className="text-foreground/80 hover:text-foreground hover:gradient-text transition-all">{l}</a>
+                  <Link to={hrefs[i]} className="text-foreground/80 hover:text-foreground hover:gradient-text transition-all">{l}</Link>
                 </li>
               ))}
             </ul>
