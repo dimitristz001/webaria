@@ -1,28 +1,33 @@
-## Πρόβλημα
+# Plan: Νέα Homepage για Webaria
 
-Τα logos (`webaria-mark.png`, `webaria-full.png`) είναι αποθηκευμένα στο Lovable CDN και αναφέρονται μέσω URL τύπου `/__l5e/assets-v1/...`. Αυτό το path υπάρχει μόνο στο Lovable hosting. Στο Vercel δεν υπάρχει κανένα route που να το σερβίρει, οπότε ο browser εμφανίζει σπασμένη εικόνα.
+Θα κρατήσω το υπάρχον Hero και θα προσθέσω 3 νέες ενότητες κάτω από αυτό, ώστε η αρχική να είναι πλήρης, απλή και κατανοητή — χωρίς να αλλάξω τις υπόλοιπες σελίδες.
 
-## Λύση
+## Δομή της νέας Homepage
 
-Μεταφορά των logos μέσα στο project (`public/`) ώστε να γίνονται bundle/deploy μαζί με τον υπόλοιπο κώδικα — οπουδήποτε κι αν φιλοξενηθεί (Vercel, Netlify, Lovable, παντού).
+1. **Hero** (όπως είναι σήμερα — logo, τίτλος, CTAs)
+2. **Σύντομες Υπηρεσίες** — 4 cards (Websites, E-shops, Booking, Custom Solutions) με icon, τίτλο, 1 γραμμή περιγραφή. Κουμπί "Δες όλες τις υπηρεσίες" → `/services`.
+3. **Γιατί Webaria** — 4 benefits (π.χ. Ταχύτητα παράδοσης, Καθαρός σχεδιασμός, Διαφανής επικοινωνία, Υποστήριξη μετά την παράδοση) σε απλό grid με εικονίδια.
+4. **Highlights από Work** — 3 επιλεγμένα projects από το `src/data/projects.ts` σε cards με εικόνα και κατηγορία. Κουμπί "Δες όλα τα έργα" → `/work`.
+5. **CTA λωρίδα** — μικρή γραμμή με "Έτοιμοι να ξεκινήσουμε;" και κουμπί → `/contact` (πριν το footer, για φυσική ροή).
+6. **Footer** (όπως είναι)
 
-## Βήματα
+## Στυλ
 
-1. **Κατέβασμα των δύο logos** από το Lovable CDN στο `public/`:
-   - `public/webaria-mark.png`
-   - `public/webaria-full.png`
+- Ισορροπημένο: αρκετό περιεχόμενο αλλά με άνετο whitespace ανάμεσα στις ενότητες (py-24).
+- Χρήση των υπαρχόντων design tokens (`gradient-text`, `gradient-bg`, `glass-effect`, accent-blue/purple/emerald).
+- Space Grotesk για τίτλους, Inter για body — ήδη στο project.
+- Framer Motion fade/slide-in στις ενότητες όταν εμφανίζονται στο viewport.
+- Πλήρως δίγλωσσο (EN/EL) μέσω του υπάρχοντος `useI18n`.
 
-2. **Ενημέρωση references** ώστε αντί για το `.asset.json` pointer να χρησιμοποιούν απλό path:
-   - `src/components/NavBar.tsx` → `src="/webaria-mark.png"`
-   - `src/components/Footer.tsx` → `src="/webaria-mark.png"`
-   - Έλεγχος για τυχόν χρήση του `webaria-full.png` και ενημέρωση.
+## Τεχνικές αλλαγές
 
-3. **Διαγραφή των `.asset.json` pointers** που δεν χρειάζονται πλέον:
-   - `src/assets/webaria-mark.png.asset.json`
-   - `src/assets/webaria-full.png.asset.json`
+- **`src/pages/Home.tsx`**: προσθήκη 3 νέων section components κάτω από το `<Hero />` και πάνω από το `<Footer />`.
+- **Νέα components** (μικρά, focused):
+  - `src/components/home/ServicesPreview.tsx`
+  - `src/components/home/WhyWebaria.tsx`
+  - `src/components/home/WorkHighlights.tsx` (χρησιμοποιεί τα πρώτα 3 από `src/data/projects.ts`)
+  - `src/components/home/HomeCTA.tsx`
+- **`src/lib/i18n.tsx`**: προσθήκη νέων μεταφράσεων EN/EL για τις 4 ενότητες (κρατάω το υπόλοιπο άθικτο).
+- Καμία αλλαγή σε NavBar, Footer, ή τις σελίδες `/services`, `/pricing`, `/work`, `/contact`.
 
-4. **Επαλήθευση** ότι το build περνάει και ότι σε νέο deploy στο Vercel τα logos εμφανίζονται κανονικά.
-
-## Σημείωση
-
-Το `public/favicon.png` είναι ήδη σωστά τοποθετημένο, δεν χρειάζεται αλλαγή. Μετά από αυτή την αλλαγή, ο επόμενος push στο Vercel θα δείξει τα logos σωστά.
+Θες να προχωρήσω έτσι;
