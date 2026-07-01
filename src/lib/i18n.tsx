@@ -135,6 +135,42 @@ const translations: Record<Lang, Dict> = {
       studio: 'Studio', studioVal: 'Remote-first · EU & US', studioDesc: 'Working with teams worldwide.',
       follow: 'Follow us',
     },
+    home: {
+      services: {
+        eyebrow: 'What we do',
+        title: 'Simple services, done right.',
+        desc: 'From marketing sites to full custom platforms — one team, clear scope, honest timelines.',
+        cta: 'See all services',
+        items: [
+          { title: 'Websites', desc: 'Fast, clean sites that make your brand look serious.' },
+          { title: 'E-shops', desc: 'Online stores built to sell — from checkout to shipping.' },
+          { title: 'Booking Systems', desc: 'Automated bookings with payments and reminders.' },
+          { title: 'Custom Solutions', desc: 'CRMs, dashboards and internal tools tailored to your team.' },
+        ],
+      },
+      why: {
+        eyebrow: 'Why Webaria',
+        title: 'A team that actually cares.',
+        desc: 'We are small on purpose — so every project gets full attention.',
+        items: [
+          { title: 'Fast delivery', desc: 'Most projects ship in 2 to 8 weeks, not months.' },
+          { title: 'Clean design', desc: 'Modern, timeless interfaces that age well.' },
+          { title: 'Honest communication', desc: 'Clear updates, no jargon, no surprises on the invoice.' },
+          { title: 'Support after launch', desc: 'We stay around after go-live to help you grow.' },
+        ],
+      },
+      work: {
+        eyebrow: 'Selected work',
+        title: 'A few things we recently shipped.',
+        desc: 'Real projects, real clients — from eshops to custom platforms.',
+        cta: 'See all work',
+      },
+      homeCta: {
+        title: 'Have an idea? Let’s talk.',
+        desc: 'Tell us about your project and we’ll get back to you within 24 hours.',
+        button: 'Start a project',
+      },
+    },
     footer: {
       desc: 'A small digital studio building websites, eshops and booking systems that feel as good as they perform.',
       explore: 'Explore', services: 'Services',
@@ -271,6 +307,42 @@ const translations: Record<Lang, Dict> = {
       errorTitle: 'Κάτι πήγε στραβά', errorDesc: 'Παρακαλώ δοκιμάστε ξανά σε λίγο.',
       studio: 'Studio', studioVal: 'Remote-first · ΕΕ & ΗΠΑ', studioDesc: 'Συνεργαζόμαστε με ομάδες παγκοσμίως.',
       follow: 'Ακολουθήστε μας',
+    },
+    home: {
+      services: {
+        eyebrow: 'Τι κάνουμε',
+        title: 'Απλές υπηρεσίες, φτιαγμένες σωστά.',
+        desc: 'Από απλά websites μέχρι custom πλατφόρμες — μία ομάδα, ξεκάθαρο scope, ειλικρινή χρονοδιαγράμματα.',
+        cta: 'Δείτε όλες τις υπηρεσίες',
+        items: [
+          { title: 'Ιστοσελίδες', desc: 'Γρήγορες, καθαρές σελίδες που κάνουν το brand σας να δείχνει σοβαρό.' },
+          { title: 'E-shops', desc: 'Ηλεκτρονικά καταστήματα φτιαγμένα για να πουλάνε — από το checkout μέχρι την αποστολή.' },
+          { title: 'Συστήματα Κρατήσεων', desc: 'Αυτοματοποιημένες κρατήσεις με πληρωμές και υπενθυμίσεις.' },
+          { title: 'Custom Λύσεις', desc: 'CRMs, dashboards και εσωτερικά εργαλεία στα μέτρα της ομάδας σας.' },
+        ],
+      },
+      why: {
+        eyebrow: 'Γιατί Webaria',
+        title: 'Μια ομάδα που πραγματικά νοιάζεται.',
+        desc: 'Είμαστε μικροί επίτηδες — για να δίνουμε πλήρη προσοχή σε κάθε έργο.',
+        items: [
+          { title: 'Γρήγορη παράδοση', desc: 'Τα περισσότερα έργα παραδίδονται σε 2 έως 8 εβδομάδες, όχι μήνες.' },
+          { title: 'Καθαρός σχεδιασμός', desc: 'Μοντέρνα, διαχρονικά interfaces που δεν παλιώνουν.' },
+          { title: 'Ειλικρινής επικοινωνία', desc: 'Ξεκάθαρα updates, χωρίς jargon και εκπλήξεις στο τιμολόγιο.' },
+          { title: 'Υποστήριξη μετά το launch', desc: 'Μένουμε δίπλα σας για να σας βοηθήσουμε να μεγαλώσετε.' },
+        ],
+      },
+      work: {
+        eyebrow: 'Επιλεγμένα έργα',
+        title: 'Μερικά πράγματα που φτιάξαμε πρόσφατα.',
+        desc: 'Πραγματικά έργα, πραγματικοί πελάτες — από eshops μέχρι custom πλατφόρμες.',
+        cta: 'Δείτε όλα τα έργα',
+      },
+      homeCta: {
+        title: 'Έχετε μια ιδέα; Ας μιλήσουμε.',
+        desc: 'Πείτε μας για το έργο σας και θα σας απαντήσουμε εντός 24 ωρών.',
+        button: 'Ξεκινήστε ένα έργο',
+      },
     },
     footer: {
       desc: 'Ένα μικρό ψηφιακό studio που φτιάχνει websites, eshops και συστήματα κρατήσεων με μεράκι και προσοχή στη λεπτομέρεια.',
