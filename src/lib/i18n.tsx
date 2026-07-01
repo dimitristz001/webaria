@@ -135,6 +135,42 @@ const translations: Record<Lang, Dict> = {
       studio: 'Studio', studioVal: 'Remote-first · EU & US', studioDesc: 'Working with teams worldwide.',
       follow: 'Follow us',
     },
+    home: {
+      services: {
+        eyebrow: 'What we do',
+        title: 'Simple services, done right.',
+        desc: 'From marketing sites to full custom platforms — one team, clear scope, honest timelines.',
+        cta: 'See all services',
+        items: [
+          { title: 'Websites', desc: 'Fast, clean sites that make your brand look serious.' },
+          { title: 'E-shops', desc: 'Online stores built to sell — from checkout to shipping.' },
+          { title: 'Booking Systems', desc: 'Automated bookings with payments and reminders.' },
+          { title: 'Custom Solutions', desc: 'CRMs, dashboards and internal tools tailored to your team.' },
+        ],
+      },
+      why: {
+        eyebrow: 'Why Webaria',
+        title: 'A team that actually cares.',
+        desc: 'We are small on purpose — so every project gets full attention.',
+        items: [
+          { title: 'Fast delivery', desc: 'Most projects ship in 2 to 8 weeks, not months.' },
+          { title: 'Clean design', desc: 'Modern, timeless interfaces that age well.' },
+          { title: 'Honest communication', desc: 'Clear updates, no jargon, no surprises on the invoice.' },
+          { title: 'Support after launch', desc: 'We stay around after go-live to help you grow.' },
+        ],
+      },
+      work: {
+        eyebrow: 'Selected work',
+        title: 'A few things we recently shipped.',
+        desc: 'Real projects, real clients — from eshops to custom platforms.',
+        cta: 'See all work',
+      },
+      homeCta: {
+        title: 'Have an idea? Let’s talk.',
+        desc: 'Tell us about your project and we’ll get back to you within 24 hours.',
+        button: 'Start a project',
+      },
+    },
     footer: {
       desc: 'A small digital studio building websites, eshops and booking systems that feel as good as they perform.',
       explore: 'Explore', services: 'Services',
