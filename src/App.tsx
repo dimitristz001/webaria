@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { I18nProvider } from './lib/i18n'
+import { ScrollToTop } from './components/ScrollToTop'
 import Home from './pages/Home'
 import ServicesPage from './pages/ServicesPage'
 import PricingPage from './pages/PricingPage'
@@ -13,6 +14,7 @@ export default function App() {
   return (
     <I18nProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
