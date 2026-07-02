@@ -1,33 +1,20 @@
-# Plan: Νέα Homepage για Webaria
+Θα ανανεώσω την ενότητα Pricing με 6 πακέτα (δίγλωσσα EN/EL) και θα προσαρμόσω το grid ώστε να δείχνει όμορφα.
 
-Θα κρατήσω το υπάρχον Hero και θα προσθέσω 3 νέες ενότητες κάτω από αυτό, ώστε η αρχική να είναι πλήρης, απλή και κατανοητή — χωρίς να αλλάξω τις υπόλοιπες σελίδες.
+## Τα 6 πακέτα
 
-## Δομή της νέας Homepage
+1. **Starter Site** — Απλή ιστοσελίδα 1–3 σελίδων (landing/παρουσίαση επιχείρησης). Responsive, βασικό SEO, φόρμα επικοινωνίας.
+2. **Business Website** — Ολοκληρωμένο website 3–8 σελίδων με CMS, SEO βάσεις, analytics.
+3. **Eshop** — Πλήρες e-shop με προϊόντα, καλάθι, checkout, πληρωμές (Stripe/κάρτες), διαχείριση παραγγελιών και ευκολα προσθηκη προιοντων.
+4. **Booking System** — Σύστημα κρατήσεων για κομμωτήρια /barber shops/ hair salon / nails / spa: online ραντεβού, ημερολόγιο, υπενθυμίσεις και διαχειρηση των κρατησεων.
+5. **Digital Menu** — Ψηφιακό μενού για café / εστιατόρια / bars με QR στα τραπέζια, κατηγορίες, φωτογραφίες, πολυγλωσσία, εύκολη ενημέρωση τιμών.
+6. **Dynamic QR Management** — Πλατφόρμα διαχείρισης δυναμικών QR codes: δημιουργία, επεξεργασία , analytics σκαναρισμάτων ανά campaign.ιδανικο για Airbnb και καθε ιδους καταλημα με πληροφοριες για το καθε σπιτι και τον προορισμο.
 
-1. **Hero** (όπως είναι σήμερα — logo, τίτλος, CTAs)
-2. **Σύντομες Υπηρεσίες** — 4 cards (Websites, E-shops, Booking, Custom Solutions) με icon, τίτλο, 1 γραμμή περιγραφή. Κουμπί "Δες όλες τις υπηρεσίες" → `/services`.
-3. **Γιατί Webaria** — 4 benefits (π.χ. Ταχύτητα παράδοσης, Καθαρός σχεδιασμός, Διαφανής επικοινωνία, Υποστήριξη μετά την παράδοση) σε απλό grid με εικονίδια.
-4. **Highlights από Work** — 3 επιλεγμένα projects από το `src/data/projects.ts` σε cards με εικόνα και κατηγορία. Κουμπί "Δες όλα τα έργα" → `/work`.
-5. **CTA λωρίδα** — μικρή γραμμή με "Έτοιμοι να ξεκινήσουμε;" και κουμπί → `/contact` (πριν το footer, για φυσική ροή).
-6. **Footer** (όπως είναι)
-
-## Στυλ
-
-- Ισορροπημένο: αρκετό περιεχόμενο αλλά με άνετο whitespace ανάμεσα στις ενότητες (py-24).
-- Χρήση των υπαρχόντων design tokens (`gradient-text`, `gradient-bg`, `glass-effect`, accent-blue/purple/emerald).
-- Space Grotesk για τίτλους, Inter για body — ήδη στο project.
-- Framer Motion fade/slide-in στις ενότητες όταν εμφανίζονται στο viewport.
-- Πλήρως δίγλωσσο (EN/EL) μέσω του υπάρχοντος `useI18n`.
+Κάθε πακέτο θα έχει: `name`, `tagline` (μία γραμμή), 4 `features`, και το `popular: true` στο Booking System. Το κουμπί συνεχίζει να στέλνει τον χρήστη στη σελίδα Contact με προεπιλογή του ονόματος πακέτου (υπάρχει ήδη μηχανισμός `sessionStorage`).
 
 ## Τεχνικές αλλαγές
 
-- **`src/pages/Home.tsx`**: προσθήκη 3 νέων section components κάτω από το `<Hero />` και πάνω από το `<Footer />`.
-- **Νέα components** (μικρά, focused):
-  - `src/components/home/ServicesPreview.tsx`
-  - `src/components/home/WhyWebaria.tsx`
-  - `src/components/home/WorkHighlights.tsx` (χρησιμοποιεί τα πρώτα 3 από `src/data/projects.ts`)
-  - `src/components/home/HomeCTA.tsx`
-- **`src/lib/i18n.tsx`**: προσθήκη νέων μεταφράσεων EN/EL για τις 4 ενότητες (κρατάω το υπόλοιπο άθικτο).
-- Καμία αλλαγή σε NavBar, Footer, ή τις σελίδες `/services`, `/pricing`, `/work`, `/contact`.
+- `**src/lib/i18n.tsx**`: αντικατάσταση του `pricing.items` σε EN και EL με τα 6 νέα πακέτα. Κανένα άλλο key δεν αλλάζει.
+- `**src/components/Pricing.tsx**`: αλλαγή του grid από `lg:grid-cols-4` σε `md:grid-cols-2 lg:grid-cols-3` ώστε τα 6 πακέτα να παρουσιάζονται σε 2 σειρές των 3 σε desktop, 3×2 σε tablet, 1 στήλη σε mobile. Το `isCustom` (τελευταία κάρτα → "Talk to us") το αφαιρώ ώστε όλα τα πακέτα να δείχνουν το κανονικό "Request a quote" — κανένα από τα νέα δεν είναι custom.
+- Καμία άλλη σελίδα ή component δεν επηρεάζεται. Οι τιμές παραμένουν κρυφές (μόνο περιγραφή + features + CTA), όπως ζητήθηκε από προηγούμενο μήνυμα.
 
-Θες να προχωρήσω έτσι;
+Θες να προχωρήσω;
