@@ -92,7 +92,7 @@ export function Pricing() {
                       : 'bg-background border border-border text-foreground hover:border-accent-blue/50 hover:text-foreground'
                   }`}
                 >
-                  {isCustom ? t.pricing.ctaCustom : t.pricing.cta}
+                  {t.pricing.cta}
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </motion.div>
