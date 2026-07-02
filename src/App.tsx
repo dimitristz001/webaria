@@ -14,6 +14,7 @@ export default function App() {
   return (
     <I18nProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<ServicesPage />} />
