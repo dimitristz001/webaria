@@ -42,10 +42,9 @@ export function Pricing() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {items.map((pkg, i) => {
             const isPopular = !!pkg.popular
-            const isCustom = i === items.length - 1
             return (
               <motion.div
                 key={pkg.name}
