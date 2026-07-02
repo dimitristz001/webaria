@@ -45,7 +45,7 @@ const translations: Record<Lang, Dict> = {
       title1: 'Simple, transparent ',
       titleAccent: 'packages',
       title2: '.',
-      desc: 'Pick the package closest to what you need — we’ll send a clear, custom quote within 24 hours. No surprises, no inflated retainers.',
+      desc: 'Pick the package closest to what you need — we’ll send a clear, custom quote within 24 hours.',
       popular: 'Most popular',
       cta: 'Request a quote',
       ctaCustom: 'Talk to us',
