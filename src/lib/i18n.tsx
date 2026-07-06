@@ -181,6 +181,22 @@ const translations: Record<Lang, Dict> = {
         button: 'Start a project',
       },
     },
+    faq: {
+      eyebrow: 'FAQ',
+      title1: 'Frequently asked ',
+      titleAccent: 'questions',
+      title2: '.',
+      desc: 'Everything you need to know before we start working together.',
+      items: [
+        { q: 'How much does a website cost?', a: 'It depends on scope. Starter sites start from a small fixed price; business sites, eshops and booking platforms scale with the features you need. We send a clear, custom quote within 24 hours.' },
+        { q: 'How long does it take to build?', a: 'Starter sites ship in about 1–2 weeks, business websites in 2–4 weeks, and eshops or booking systems in 3–8 weeks depending on complexity.' },
+        { q: 'Do you provide domain and hosting?', a: 'Yes — we handle domain purchase and fast, secure hosting setup for you, or we work with the providers you already use.' },
+        { q: 'Can I make changes myself after launch?', a: 'Absolutely. We deliver an easy-to-use CMS or dashboard plus a short training video so you can edit content, products or prices on your own.' },
+        { q: 'Is there technical support after launch?', a: 'Yes. We offer monthly maintenance and support plans covering updates, backups, small changes and priority help when you need it.' },
+        { q: 'What about SEO?', a: 'Every site ships with solid on-page SEO foundations — semantic markup, meta tags, sitemap, performance and schema — so you start ranking on the right foot.' },
+        { q: 'Do you accept installments?', a: 'Yes. Our standard split is 40% upfront, 30% at midway, and 30% on delivery.' },
+      ],
+    },
     footer: {
       desc: 'A small digital studio building websites, eshops and booking systems that feel as good as they perform.',
       explore: 'Explore', services: 'Services',
