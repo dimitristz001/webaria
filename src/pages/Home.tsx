@@ -4,6 +4,7 @@ import { ServicesPreview } from '@/components/home/ServicesPreview'
 import { WhyWebaria } from '@/components/home/WhyWebaria'
 import { WorkHighlights } from '@/components/home/WorkHighlights'
 import { HomeCTA } from '@/components/home/HomeCTA'
+import { FAQ } from '@/components/FAQ'
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <ServicesPreview />
         <WhyWebaria />
         <WorkHighlights />
+        <FAQ />
         <HomeCTA />
       </main>
       <Footer />
