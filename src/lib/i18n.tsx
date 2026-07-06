@@ -8,7 +8,7 @@ type Dict = Record<string, string | string[] | any>
 
 const translations: Record<Lang, Dict> = {
   en: {
-    nav: { services: 'Services', pricing: 'Pricing', work: 'Work', process: 'Process', contact: 'Contact', cta: 'Get Started' },
+    nav: { services: 'Services', pricing: 'Pricing', work: 'Work', process: 'Process', faq: 'FAQ', contact: 'Contact', cta: 'Get Started' },
     hero: {
       badge: 'Digital Agency · Available for new projects',
       title1: 'We Build ',
@@ -207,7 +207,7 @@ const translations: Record<Lang, Dict> = {
     },
   },
   el: {
-    nav: { services: 'Υπηρεσίες', pricing: 'Πακέτα', work: 'Έργα', process: 'Διαδικασία', contact: 'Επικοινωνία', cta: 'Ξεκινήστε' },
+    nav: { services: 'Υπηρεσίες', pricing: 'Πακέτα', work: 'Έργα', process: 'Διαδικασία', faq: 'FAQ', contact: 'Επικοινωνία', cta: 'Ξεκινήστε' },
     hero: {
       badge: 'Digital Agency · Διαθέσιμοι για νέα έργα',
       title1: 'Δημιουργούμε ',
