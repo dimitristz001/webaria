@@ -1,20 +1,34 @@
-Θα ανανεώσω την ενότητα Pricing με 6 πακέτα (δίγλωσσα EN/EL) και θα προσαρμόσω το grid ώστε να δείχνει όμορφα.
+## FAQ Section
 
-## Τα 6 πακέτα
+Add a new FAQ section to the site with expandable questions/answers, bilingual (EN/EL), matching the existing dark premium aesthetic.
 
-1. **Starter Site** — Απλή ιστοσελίδα 1–3 σελίδων (landing/παρουσίαση επιχείρησης). Responsive, βασικό SEO, φόρμα επικοινωνίας.
-2. **Business Website** — Ολοκληρωμένο website 3–8 σελίδων με CMS, SEO βάσεις, analytics.
-3. **Eshop** — Πλήρες e-shop με προϊόντα, καλάθι, checkout, πληρωμές (Stripe/κάρτες), διαχείριση παραγγελιών και ευκολα προσθηκη προιοντων.
-4. **Booking System** — Σύστημα κρατήσεων για κομμωτήρια /barber shops/ hair salon / nails / spa: online ραντεβού, ημερολόγιο, υπενθυμίσεις και διαχειρηση των κρατησεων.
-5. **Digital Menu** — Ψηφιακό μενού για café / εστιατόρια / bars με QR στα τραπέζια, κατηγορίες, φωτογραφίες, πολυγλωσσία, εύκολη ενημέρωση τιμών.
-6. **Dynamic QR Management** — Πλατφόρμα διαχείρισης δυναμικών QR codes: δημιουργία, επεξεργασία , analytics σκαναρισμάτων ανά campaign.ιδανικο για Airbnb και καθε ιδους καταλημα με πληροφοριες για το καθε σπιτι και τον προορισμο.
+### Where it appears
+- On the **Home page** (`src/pages/Home.tsx`), inserted between `WorkHighlights` and `HomeCTA`.
+- Also on the **Contact page** (`src/pages/ContactPage.tsx`), above the contact form — since users often look for answers before reaching out.
 
-Κάθε πακέτο θα έχει: `name`, `tagline` (μία γραμμή), 4 `features`, και το `popular: true` στο Booking System. Το κουμπί συνεχίζει να στέλνει τον χρήστη στη σελίδα Contact με προεπιλογή του ονόματος πακέτου (υπάρχει ήδη μηχανισμός `sessionStorage`).
+### Content (6 Q&A, bilingual)
 
-## Τεχνικές αλλαγές
+Included from your list + extras:
 
-- `**src/lib/i18n.tsx**`: αντικατάσταση του `pricing.items` σε EN και EL με τα 6 νέα πακέτα. Κανένα άλλο key δεν αλλάζει.
-- `**src/components/Pricing.tsx**`: αλλαγή του grid από `lg:grid-cols-4` σε `md:grid-cols-2 lg:grid-cols-3` ώστε τα 6 πακέτα να παρουσιάζονται σε 2 σειρές των 3 σε desktop, 3×2 σε tablet, 1 στήλη σε mobile. Το `isCustom` (τελευταία κάρτα → "Talk to us") το αφαιρώ ώστε όλα τα πακέτα να δείχνουν το κανονικό "Request a quote" — κανένα από τα νέα δεν είναι custom.
-- Καμία άλλη σελίδα ή component δεν επηρεάζεται. Οι τιμές παραμένουν κρυφές (μόνο περιγραφή + features + CTA), όπως ζητήθηκε από προηγούμενο μήνυμα.
+1. **Πόσο κοστίζει μια ιστοσελίδα;** — Depends on scope; starter sites from a low fixed price, business/eshop/booking scale with features. We send a clear custom quote within 24h.
+2. **Πόσο χρόνο χρειάζεται για την κατασκευή;** — Starter 1–2 εβδομάδες, Business 2–4, Eshop/Booking 3–8 εβδομάδες.
+3. **Παρέχεται Domain / Hosting;** — Ναι, αναλαμβάνουμε αγορά & setup domain και fast hosting, ή δουλεύουμε με ό,τι ήδη έχετε.
+4. **Μπορώ να κάνω αλλαγές μόνος μου;** — Ναι, παραδίδουμε εύχρηστο CMS/dashboard + σύντομο training video.
+5. **Υπάρχει τεχνική υποστήριξη;** — Ναι, μηνιαία πακέτα υποστήριξης & maintenance μετά το launch.
+6. **Τι γίνεται με το SEO;** — Κάθε site παραδίδεται με βασικό on-page SEO, sitemap, meta tags, performance & schema.
+7. **Δέχεστε πληρωμές με δόσεις;** — Ναι, 40% προκαταβολή / 30% στο midway / 30% στην παράδοση.
 
-Θες να προχωρήσω;
+(You can trim to your 5 if preferred — just say the word.)
+
+### Design
+- Dark section with subtle gradient background matching the rest of the site.
+- Eyebrow "FAQ" + display heading "Συχνές ερωτήσεις" / "Frequently asked questions".
+- shadcn `Accordion` (already in the project) — single-open, chevron indicator, smooth expand.
+- Framer Motion fade/rise on section entrance.
+- Max width ~800px, centered.
+
+### Technical details
+- New file: `src/components/FAQ.tsx` — reads strings from `useI18n()`.
+- Extend `src/lib/i18n.tsx` translations with a `faq` block (`eyebrow`, `title1`, `titleAccent`, `title2`, `desc`, `items[{q,a}]`) for both `en` and `el`.
+- Mount `<FAQ />` in `src/pages/Home.tsx` (before `HomeCTA`) and `src/pages/ContactPage.tsx` (above the form).
+- No backend, no routes, no new dependencies.
