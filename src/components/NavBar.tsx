@@ -19,6 +19,7 @@ export function NavBar() {
     { to: '/services', label: t.nav.services },
     { to: '/pricing', label: t.nav.pricing },
     { to: '/work', label: t.nav.work },
+    { to: '/faq', label: t.nav.faq ?? 'FAQ' },
     { to: '/contact', label: t.nav.contact },
   ]
 

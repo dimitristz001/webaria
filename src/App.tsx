@@ -7,6 +7,7 @@ import PricingPage from './pages/PricingPage'
 import WorkPage from './pages/WorkPage'
 import ContactPage from './pages/ContactPage'
 import CaseStudy from './pages/CaseStudy'
+import FaqPage from './pages/FaqPage'
 import NotFound from './pages/NotFound'
 import { Toaster } from '@/components/ui/sonner'
 
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/work" element={<WorkPage />} />
+          <Route path="/faq" element={<FaqPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/work/:slug" element={<CaseStudy />} />
           <Route path="*" element={<NotFound />} />
