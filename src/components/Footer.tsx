@@ -1,6 +1,13 @@
 'use client'
 
 import { Twitter, Linkedin, Instagram, Github } from 'lucide-react'
+
+const SOCIALS: { Icon: typeof Twitter; href: string; label: string }[] = [
+  { Icon: Twitter, href: '#', label: 'Twitter' },
+  { Icon: Linkedin, href: '#', label: 'LinkedIn' },
+  { Icon: Instagram, href: 'https://www.instagram.com/webariagr?igsh=ZDlsdXp1c2FyZjV4&utm_source=qr', label: 'Instagram' },
+  { Icon: Github, href: '#', label: 'GitHub' },
+]
 import { Link } from 'react-router-dom'
 const logoMark = { url: '/favicon.png' }
 import { useI18n } from '@/lib/i18n'
