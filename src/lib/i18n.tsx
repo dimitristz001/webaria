@@ -420,12 +420,12 @@ const translations: Record<Lang, Dict> = {
 }
 
 type Ctx = { lang: Lang; setLang: (l: Lang) => void; t: any }
-const I18nContext = createContext<Ctx>({ lang: 'en', setLang: () => {}, t: translations.en })
+const I18nContext = createContext<Ctx>({ lang: 'el', setLang: () => {}, t: translations.el })
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Lang>(() => {
-    if (typeof window === 'undefined') return 'en'
-    return (localStorage.getItem('lang') as Lang) || 'en'
+    if (typeof window === 'undefined') return 'el'
+    return (localStorage.getItem('lang') as Lang) || 'el'
   })
   useEffect(() => {
     localStorage.setItem('lang', lang)
