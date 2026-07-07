@@ -180,8 +180,13 @@ export function Contact() {
             <div className="p-6 rounded-2xl bg-card border border-border">
               <div className="text-xs uppercase tracking-widest text-muted-foreground mb-4">{t.contact.follow}</div>
               <div className="flex items-center gap-3">
-                {[Twitter, Linkedin, Instagram, Github].map((Icon, i) => (
-                  <a key={i} href="#"
+                {[
+                  { Icon: Twitter, href: '#', label: 'Twitter' },
+                  { Icon: Linkedin, href: '#', label: 'LinkedIn' },
+                  { Icon: Instagram, href: 'https://www.instagram.com/webariagr?igsh=ZDlsdXp1c2FyZjV4&utm_source=qr', label: 'Instagram' },
+                  { Icon: Github, href: '#', label: 'GitHub' },
+                ].map(({ Icon, href, label }) => (
+                  <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} aria-label={label}
                      className="w-10 h-10 rounded-lg bg-background border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-accent-blue/50 hover:-translate-y-0.5 transition-all">
                     <Icon className="w-4 h-4" />
                   </a>
