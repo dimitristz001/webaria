@@ -197,6 +197,12 @@ const translations: Record<Lang, Dict> = {
         { q: 'Do you accept installments?', a: 'Yes. Our standard split is 40% upfront, 30% at midway, and 30% on delivery.' },
       ],
     },
+    seo: {
+      faq: {
+        title: 'FAQ — Website, Eshop & Booking Questions | Webaria',
+        description: 'Answers to common questions about website cost, build time, domain & hosting, ongoing support, SEO and payment terms — from the Webaria digital studio.',
+      },
+    },
     footer: {
       desc: 'A small digital studio building websites, eshops and booking systems that feel as good as they perform.',
       explore: 'Explore', services: 'Services',
@@ -395,6 +401,12 @@ const translations: Record<Lang, Dict> = {
         { q: 'Τι γίνεται με το SEO;', a: 'Κάθε site παραδίδεται με στέρεες βάσεις SEO — semantic markup, meta tags, sitemap, performance και schema — για να ξεκινήσετε σωστά στη Google.' },
         { q: 'Δέχεστε πληρωμές με δόσεις;', a: 'Ναι. Ο συνηθισμένος διαχωρισμός είναι 40% προκαταβολή, 30% στο midway και 30% στην παράδοση.' },
       ],
+    },
+    seo: {
+      faq: {
+        title: 'FAQ — Συχνές ερωτήσεις για ιστοσελίδες & eshop | Webaria',
+        description: 'Απαντήσεις σε συχνές ερωτήσεις για κόστος ιστοσελίδας, χρόνο κατασκευής, domain & hosting, τεχνική υποστήριξη, SEO και τρόπους πληρωμής — από τη Webaria.',
+      },
     },
     footer: {
       desc: 'Ένα μικρό ψηφιακό studio που φτιάχνει websites, eshops και συστήματα κρατήσεων με μεράκι και προσοχή στη λεπτομέρεια.',
