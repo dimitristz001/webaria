@@ -28,8 +28,8 @@ export function Footer() {
               {t.footer.desc}
             </p>
             <div className="flex items-center gap-3">
-              {[Twitter, Linkedin, Instagram, Github].map((Icon, i) => (
-                <a key={i} href="#"
+              {SOCIALS.map(({ Icon, href, label }) => (
+                <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noopener noreferrer' : undefined} aria-label={label}
                    className="w-9 h-9 rounded-lg bg-background border border-border flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-accent-blue/50 transition-all">
                   <Icon className="w-4 h-4" />
                 </a>
